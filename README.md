@@ -28,7 +28,7 @@
   * Deep learning model
 
 ## GitHub Repo
-  * To be updated
+  * https://github.com/srinivasgazula/EE769_Course_Project
 
 ## Project Report
   * https://www.ee.iitb.ac.in/course/~gsbnaidu/assets/files/EE769_Report.pdf
