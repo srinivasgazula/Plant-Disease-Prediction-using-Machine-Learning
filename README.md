@@ -24,6 +24,7 @@
   * Random forest classifier
   * L2 regularized logistic regression
   * Decision Tree
+  * Adaboost Decision Tree
   * Voting Classifier(Ensemble Learning Model of the above three)
   * Deep learning model
 
