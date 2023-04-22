@@ -108,6 +108,7 @@ from tensorflow.keras.optimizers import Adam
 
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.utils import to_categorical
+from keras.utils.vis_utils import plot_model
 import itertools
 
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
@@ -422,6 +423,44 @@ print(y1_valid.value_counts().reset_index())
 print(y2_valid.value_counts().reset_index())
 print('-------------------------------------------------------------------\n')
 display(pd.concat([X1_valid, y1_valid, y2_valid], axis=1))
+
+"""## Task-1D (Are the classes balanced?)"""
+
+#References:
+#1. https://stackoverflow.com/questions/67287472/how-can-i-find-whether-my-dataset-is-balanced-or-not#:~:text=In%20simple%20words%2C%20you%20need,present%20in%20your%20target%20variable.&text=If%20you%20check%20the%20ratio,oversample%20or%20undersample%20the%20data
+#2. https://www.tutorialspoint.com/how-to-plot-two-seaborn-lmplots-side-by-side-matplotlib
+
+print("Training Dataset")
+plt.rcParams["figure.figsize"] = [5.00, 3.50]
+plt.rcParams["figure.autolayout"] = True
+# f, axes = plt.subplots(2, 1)
+xx1 = y1_train.value_counts().reset_index()
+sns.barplot( y='index', x='plant',data=xx1, palette='flare').set(xlabel=None, ylabel=None)
+plt.savefig('/content/drive/MyDrive/EE769/Distribution_Plants.png')
+plt.show()
+
+plt.rcParams["figure.figsize"] = [5.00, 3.50]
+plt.rcParams["figure.autolayout"] = True
+xx2 = y2_train.value_counts().reset_index()
+sns.barplot( y='index', x='disease',data=xx2, palette='cividis').set(xlabel=None, ylabel=None)
+plt.savefig('/content/drive/MyDrive/EE769/Distribution_Diseases.png')
+plt.show()
+
+print("Validation Dataset")
+plt.rcParams["figure.figsize"] = [5.00, 3.50]
+plt.rcParams["figure.autolayout"] = True
+# f, axes = plt.subplots(2, 1)
+xx1 = y1_valid.value_counts().reset_index()
+sns.barplot( y='index', x='plant',data=xx1, palette='flare').set(xlabel=None, ylabel=None)
+plt.savefig('/content/drive/MyDrive/EE769/Valid_Distribution_Plants.png')
+plt.show()
+
+plt.rcParams["figure.figsize"] = [5.00, 3.50]
+plt.rcParams["figure.autolayout"] = True
+xx2 = y2_valid.value_counts().reset_index()
+sns.barplot( y='index', x='disease',data=xx2, palette='cividis').set(xlabel=None, ylabel=None)
+plt.savefig('/content/drive/MyDrive/EE769/Valid_Distribution_Diseases.png')
+plt.show()
 
 """## Task-2A: Predictor-1 
 ### L2 regularized logistic regression - Training
@@ -2316,6 +2355,34 @@ disease_predictions = disease_model.predict(input_data_array)
 
 print('The Predicted plant is '+ str(plant_encoder.inverse_transform(np.argmax(plants_predictions, axis=1))[0]) )
 print('The Predicted disease is '+ str(diseases_encoder.inverse_transform(np.argmax(disease_predictions, axis=1))[0]) )
+
+"""## Task-8E: Predictor-5
+### Deep Learning Model - Plot model architecture
+"""
+
+#Load models
+plant_model = load_model('/content/drive/MyDrive/EE769/plant_model.h5')
+disease_model = load_model('/content/drive/MyDrive/EE769/merged_disease_model.h5')
+
+# Plot the model architecture
+plot_model(plant_model, to_file='/content/drive/MyDrive/EE769/architecture_plant_model.png', show_shapes=True, show_layer_names=True)
+plot_model(disease_model, to_file='/content/drive/MyDrive/EE769/architecture_merged_disease_model.png', show_shapes=True, show_layer_names=True)
+
+print("Plants model Architecture")
+plt.rcParams["figure.figsize"] = [5.00, 7]
+plt.rcParams["figure.autolayout"] = True
+fig, axs = plt.subplots()
+axs.imshow(plt.imread('/content/drive/MyDrive/EE769/architecture_plant_model.png'))
+axs.axis('off')
+plt.show()
+
+print("Disease model Architecture")
+plt.rcParams["figure.figsize"] = [20.00, 3.50]
+plt.rcParams["figure.autolayout"] = True
+fig, axs = plt.subplots()
+axs.imshow(plt.imread('/content/drive/MyDrive/EE769/architecture_merged_disease_model.png'))
+axs.axis('off')
+plt.show()
 
 """##Task-9: Part-1
 ###Findings
