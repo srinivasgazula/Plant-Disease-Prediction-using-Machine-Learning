@@ -2421,6 +2421,6 @@ plt.show()
 8. https://towardsdatascience.com/bayesian-optimization-for-hyperparameter-tuning-how-and-why-655b0ee0b399
 9. https://towardsdatascience.com/decision-tree-in-python-b433ae57fb93
 10. https://mathtuition88.com/2019/10/11/how-to-save-sklearn-tree-plot-as-file-vector-graphics/
-https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html
-11. https://towardsdatascience.com/ensemble-learning-using-scikit-learn-85c4531ff86a
+11. https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html
+12. https://towardsdatascience.com/ensemble-learning-using-scikit-learn-85c4531ff86a
 """
