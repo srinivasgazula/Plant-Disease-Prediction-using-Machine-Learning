@@ -33,5 +33,5 @@
 
 ## Project Report
   * https://www.ee.iitb.ac.in/course/~gsbnaidu/assets/files/EE769_Report.pdf
-  * [EE769_Report.pdf](https://github.com/srinivasgazula/Plant-Disease-Prediction-using-Machine-Learning/blob/b9e6e994bcf163b0449001fc23662aec4125e999/EE769_Report.pdf)https://github.com/srinivasgazula/Plant-Disease-Prediction-using-Machine-Learning/blob/b9e6e994bcf163b0449001fc23662aec4125e999/EE769_Report.pdf
+  * [EE769_Report.pdf](https://github.com/srinivasgazula/Plant-Disease-Prediction-using-Machine-Learning/blob/b9e6e994bcf163b0449001fc23662aec4125e999/EE769_Report.pdf)
 ---
