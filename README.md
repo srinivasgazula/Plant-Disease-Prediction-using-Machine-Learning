@@ -1,5 +1,6 @@
-# EE769 Course Project
-## Title: Plant Disease Prediction using Machine Learning
+# EE769 – Introduction to Machine Learning
+## Course Project
+### Title: Plant Disease Prediction using Machine Learning
 ## Members: 
 <ul>
 <li> Gazula Srinivas Bapaiah Naidu (203079007)</li>
